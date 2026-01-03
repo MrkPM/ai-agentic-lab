@@ -13,18 +13,18 @@ becoming an AI Product Manager / AI Engineer with hands-on skills in:
 - Vector databases, embeddings, chunking, pipelines
 - Building real AI systems and shipping working prototypes
 
-This repo holds:
+## What this repository contains
+
 - Working agent prototypes
 - RAG systems
-- workflow JSONs
-- portfolio demos
-- notes, patterns, architectures
+- Workflow JSONs
+- Portfolio demos
+- Architecture notes & patterns
 - MCP servers and clients
 - Flowise flows
 - Local LLM experiments
 
----
-### 📍 Current Status  
-Learning Phase: **Course 1 — n8n & AI Automation**  
-Tracking roadmap in Airtable.
-# ai-agentic-lab
+## Current status
+
+**Learning phase:** Course 1 — n8n & AI Automation  
+**Roadmap tracking:** Airtable  
