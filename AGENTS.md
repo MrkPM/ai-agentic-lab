@@ -1,68 +1,66 @@
-# AGENTS.md
+# AGENTS.md — Repo Operating Contract
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+This repository is a learning-first AI PM lab. Assistants are welcome, chaos is not.
 
-## Repository Purpose
-This is a personal learning and portfolio repository for AI/Agentic systems. It documents learning progress and contains working prototypes, experiments, and demonstrations in:
-- LLM applications (GPT, Claude, Gemini, Llama, Mistral, DeepSeek)
-- Agentic architectures (OpenAI Agents SDK, CrewAI, LangGraph, AutoGen)
-- n8n workflow automations
-- RAG (Retrieval-Augmented Generation) systems
-- Local LLM experimentation (Ollama, LM Studio, AnythingLLM)
-- MCP (Model Context Protocol) implementations
-- Flowise + LangChain development
+## Canonical Working Directory
+This repo is the source of truth:
+- `/Users/M/Dropbox/Udemy/n8n/ai-agentic-lab`
 
-## Repository Structure
-```
-ai-agentic-lab/
-├── docs/                    # Documentation and learning materials
-│   ├── architecture-patterns/  # Agent patterns, tool calling, ReAct patterns
-│   ├── glossary.md
-│   └── learning-roadmap.md
-├── projects/                # Hands-on projects and experiments
-│   ├── automations-n8n/     # n8n workflow automation projects
-│   ├── flowise/             # Flowise flow configurations
-│   ├── local-llm/           # Local LLM experiments (Ollama, AnythingLLM)
-│   ├── mcp/                 # Model Context Protocol work (clients, servers, experiments)
-│   └── rag-agents/          # RAG system implementations
-├── portfolio/               # Demo projects and case studies
-│   ├── case-studies/
-│   ├── demos/
-│   └── screenshots/
-└── assets/                  # Supporting files and resources
-```
+If you detect the user is operating in another copy of the repo, stop and ask them to switch to the canonical directory before making changes.
 
-## Development Approach
-- **Learning-first**: This is a learning repository; expect experimental code and evolving patterns
-- **Multi-framework**: Projects may use different frameworks and approaches as part of the learning process
-- **Documentation**: When working in `docs/`, maintain clear explanations of architecture patterns and concepts
-- **Portfolio readiness**: Code in `portfolio/` should be demo-quality with screenshots and case studies
+## Primary Principles
+- **Explicit > implicit.** Prefer simple, auditable changes over clever automation.
+- **Repo hygiene wins.** No accidental files, no secrets, no generated junk without intent.
+- **One conceptual change set per commit.** No mixed commits.
 
-## Project-Specific Guidance
+## Allowed Assistant Behaviors
+- Propose changes, explain tradeoffs, and provide patch-ready content.
+- Ask for `git status`, `git diff`, and directory snapshots before making recommendations.
+- Provide commands **one step at a time** for multi-step terminal workflows.
+- Use the repository structure and templates as the default way to add new artifacts.
 
-### n8n Automations (`projects/automations-n8n/`)
-- Store workflow exports as JSON in `workflow-json/`
-- Include screenshots of workflow visualizations in `screenshots/`
-- n8n workflows are typically edited in the n8n UI, not as raw JSON
+## Disallowed Assistant Behaviors
+- Do not fabricate file contents or claim you “can see” local files.
+- Do not introduce new tooling (frameworks, linters, package managers) unless asked.
+- Do not add credentials, tokens, API keys, SSH keys, or private files to the repo.
+- Do not refactor or rename folders as “cleanup” unless explicitly requested.
 
-### Flowise Projects (`projects/flowise/`)
-- Flow configurations are JSON exports from Flowise UI
-- Store in `flows/` directory
+## Change Workflow (Terminal)
+When guiding terminal work:
+1. Start with `pwd` + `git status`.
+2. If structure changed, generate a tree snapshot and update `docs/project_structure.md`.
+3. Show `git diff` before staging.
+4. Stage only the intended files explicitly (no `git add .` unless requested).
+5. Commit with a meaningful message.
+6. Push to `origin main`.
 
-### MCP Projects (`projects/mcp/`)
-- Separate client implementations, server implementations, and experiments
-- Follow MCP specification for protocol implementations
+For multi-step processes: **provide exactly one step**, then wait for confirmation like: `ok next`.
 
-### RAG Agents (`projects/rag-agents/`)
-- Include templates for new RAG projects
-- Document chunking strategies, embedding models, and vector database choices
+## Commit Conventions
+Use Conventional Commits:
+- `chore(docs): ...`
+- `feat(<area>): ...`
+- `fix(<area>): ...`
+- `refactor(<area>): ...`
 
-### Local LLM (`projects/local-llm/`)
-- Experiments with Ollama, LM Studio, AnythingLLM
-- Document model performance and comparison notes
+Commit messages should describe the *outcome*, not the activity.
 
-## When Adding New Projects
-1. Choose appropriate subdirectory under `projects/`
-2. Include a README.md explaining the project purpose, setup, and key learnings
-3. Document any API keys or services needed (without including actual secrets)
-4. For portfolio-worthy projects, add case study to `portfolio/case-studies/`
+## Documentation Rules
+- `docs/project_structure.md` must reflect the actual repo structure after changes.
+- Templates live in `docs/` and should be updated via small, explicit edits.
+- Keep docs practical: include decisions, constraints, and failure modes.
+
+## Safety & Privacy
+- Never commit personal or sensitive files.
+- If a file looks like a secret (keys, .env, credentials), stop and recommend adding it to `.gitignore` and removing it from git history if needed.
+
+## Assistant Roles (Mental Model)
+- **User owns decisions and final edits.**
+- **Assistant owns clarity, rigor, and safe execution guidance.**
+- If there is uncertainty, prefer verification over guessing.
+
+## Uncertainty Handling
+If information is missing, ambiguous, or unverifiable:
+- Stop and ask for clarification.
+- Prefer showing the user how to verify over guessing.
+- Never proceed based on assumptions about local state.

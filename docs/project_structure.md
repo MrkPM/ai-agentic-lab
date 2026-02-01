@@ -20,41 +20,49 @@ It is **not** intended to be:
 
 ```
 /ai-agentic-lab
+├── .gitignore
+├── AGENTS.md                                           # Repo-level behavioral contract for AI tools
 ├── README.md
 ├── assets
-│   ├── images
-│   └── videos
+│   ├── images
+│   └── videos
 ├── docs
-│   ├── architecture-patterns
-│   │   ├── agent-patterns.md
-│   │   ├── tool-calling-patterns.md
-│   │   └── react-pattern.md
-│   ├── glossary.md
-│   ├── learning-roadmap.md
-│   └── project-log-template.md
+│   ├── architecture-patterns                           # Agent / tool-calling / React patterns
+│   │   ├── agent-patterns.md
+│   │   ├── react-pattern.md
+│   │   └── tool-calling-patterns.md
+│   ├── decisions                                       # Decision records (system memory)
+│   │   ├── 2026-01-agents-md-contract.md
+│   │   ├── 2026-01-canonical-repo-location.md
+│   │   └── 2026-01-repo-sync-workflow.md
+│   ├── glossary.md
+│   ├── learning-roadmap.md         
+│   ├── meta-prompts                                    # Versioned project meta-prompts
+│   │   └── 2026_02_01_AI-Enabled-Product-Manager.md
+│   ├── project-log-template.md
+│   └── project_structure.md
 ├── portfolio
-│   ├── case-studies
-│   ├── demos
-│   └── screenshots
+│   ├── case-studies
+│   ├── demos
+│   └── screenshots
 └── projects
     ├── automations-n8n
-    │   ├── screenshots
-    │   └── workflow-json
+    │   ├── screenshots
+    │   └── workflow-json
     ├── flowise
-    │   └── flows
+    │   └── flows
     ├── local-llm
-    │   ├── anything-llm
-    │   ├── ollama
-    │   └── rag-tests
+    │   ├── anything-llm
+    │   ├── ollama
+    │   └── rag-tests
     ├── mcp
-    │   ├── clients
-    │   ├── experiments
-    │   └── servers
+    │   ├── clients
+    │   ├── experiments
+    │   └── servers
     └── rag-agents
         └── project-template
-```
 
----
+```
 
 ## 3. Folder Intent & Placement Rules
 
